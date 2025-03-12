@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas de Control Interno</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 15px; }
+        .feedback { font-weight: bold; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Preguntas de Selección Múltiple - Control Interno</h1>
+    
+    <form>
+        <div id="preguntas-container"></div>
+    </form>
+
+    <script>
+        const preguntas = [
+            { pregunta: "¿Cuál es el objetivo principal del control interno en la administración pública?", opciones: ["Maximizar el presupuesto público.", "Minimizar la carga laboral de los funcionarios.", "Garantizar eficiencia, transparencia y legalidad en la gestión de recursos."], respuesta: 2 },
+            { pregunta: "¿Qué institución regula las normas de control interno en Ecuador?", opciones: ["Ministerio de Finanzas.", "Contraloría General del Estado.", "Asamblea Nacional."], respuesta: 1 },
+            { pregunta: "¿Qué problema es común en la administración de bienes públicos?", opciones: ["Exceso de control en la adquisición.", "Falta de inventarios actualizados.", "Pérdida y deterioro de bienes por mala gestión."], respuesta: 2 },
+            { pregunta: "¿Cuál de estos es un objetivo del control interno?", opciones: ["Incrementar la burocracia.", "Proteger y preservar los bienes del Estado.", "Reducir la cantidad de auditorías."], respuesta: 1 },
+            { pregunta: "¿Qué es la auditoría interna?", opciones: ["Un procedimiento opcional.", "La evaluación de la gestión y uso de bienes estatales.", "Un proceso externo sin relación con el control interno."], respuesta: 1 },
+            { pregunta: "¿Qué norma rige el control de bienes públicos en Ecuador?", opciones: ["Código Penal", "Reglamento General Sustitutivo para la Administración de Bienes", "Ley de Propiedad Privada"], respuesta: 1 },
+            { pregunta: "¿Cómo se clasifican los bienes públicos según el reglamento?", opciones: ["Bienes de propiedad privada y pública", "Bienes de Propiedad, Planta y Equipo; Bienes de Control Administrativo; Inventarios", "Bienes tangibles e intangibles"], respuesta: 1 },
+            { pregunta: "¿Qué es un inventario en la administración de bienes?", opciones: ["Un conjunto de bienes inutilizados", "Un registro detallado de bienes estatales", "Un proceso de eliminación de bienes"], respuesta: 1 },
+            { pregunta: "¿Cada cuánto se deben realizar inventarios físicos de bienes públicos?", opciones: ["Cada 5 años", "Al menos una vez al año", "Solo cuando hay auditorías"], respuesta: 1 },
+            { pregunta: "¿Quién es responsable del control de los bienes en una institución pública?", opciones: ["Solo el presidente de la institución", "El área contable exclusivamente", "La unidad de administración de bienes"], respuesta: 2 },
+            { pregunta: "¿Qué artículo de la Constitución establece la responsabilidad de los servidores públicos en el manejo de bienes?", opciones: ["Artículo 101", "Artículo 233", "Artículo 12"], respuesta: 1 },
+            { pregunta: "¿Cuál es una de las funciones principales del control financiero?", opciones: ["Incrementar los ingresos", "Controlar costos y gestionar recursos", "Eliminar registros contables innecesarios"], respuesta: 1 },
+            { pregunta: "¿Qué entidad emite las Normas Técnicas de Control Interno?", opciones: ["Ministerio de Economía", "Contraloría General del Estado", "Banco Central del Ecuador"], respuesta: 1 },
+            { pregunta: "¿Cuál es la finalidad de la planificación de bienes en las instituciones públicas?", opciones: ["Optimizar compras y disponibilidad", "Aumentar la burocracia", "Eliminar controles internos"], respuesta: 1 },
+            { pregunta: "¿Qué procedimiento se sigue para dar de baja un bien obsoleto?", opciones: ["Destrucción inmediata", "Evaluación y baja documentada", "Donación sin control"], respuesta: 1 },
+            { pregunta: "¿Qué es la depreciación de bienes?", opciones: ["Costo de adquisición total", "Pérdida de valor por uso", "Valor de mercado"], respuesta: 1 },
+            { pregunta: "¿Cómo se determina el valor residual de un bien en la administración pública?", opciones: ["10% del valor contable", "50% del valor contable", "Depende del mercado"], respuesta: 1 },
+            { pregunta: "¿Qué significa la trazabilidad de bienes en la gestión pública?", opciones: ["Ubicación exacta de bienes", "Solo control financiero", "Solo responsabilidad del usuario"], respuesta: 0 },
+            { pregunta: "¿Quién es el responsable de la auditoría interna dentro de una entidad pública?", opciones: ["Gerente financiero", "Auditor interno designado", "Secretaría General"], respuesta: 1 },
+            { pregunta: "¿Qué tipo de bienes requieren identificación y protección especial?", opciones: ["Bienes de consumo", "Bienes de larga duración", "Bienes en inventario temporal"], respuesta: 1 },
+            { pregunta: "¿Cuál es el objetivo del control de vehículos oficiales?", opciones: ["Uso personal", "Uso oficial y restricciones", "Cualquier uso permitido"], respuesta: 1 },
+            { pregunta: "¿Cómo se lleva a cabo la constatación física de bienes?", opciones: ["Cada 10 años", "Cada año al menos", "Solo si lo exige una auditoría"], respuesta: 1 },
+            { pregunta: "¿Qué acciones pueden tomarse con bienes dados de baja por obsolescencia?", opciones: ["Donación sin evaluación", "Venta o reciclaje según normativa", "Uso sin registro"], respuesta: 1 },
+            { pregunta: "¿Cuál es la función de la unidad de administración de bienes?", opciones: ["Supervisión de procesos", "Custodia y control de bienes", "Solo registro contable"], respuesta: 1 },
+            { pregunta: "¿Qué medida se toma para asegurar la protección de bienes de larga duración?", opciones: ["Solo auditorías", "Seguros, etiquetado y control", "Solo registros electrónicos"], respuesta: 1 },
+            { pregunta: "¿Cuál es el objetivo principal de la Administración de Recursos Humanos (ARH)?", opciones: ["Maximizar la productividad de los empleados.", "Gestionar el talento humano de manera estratégica.", "Reducir los costos operativos de la organización.", "Cumplir con las normativas legales."], respuesta: 1 },
+            { pregunta: "¿Qué subsistema de la Administración de Recursos Humanos se enfoca en atraer y seleccionar al personal adecuado?", opciones: ["Subsistema de Organización de Personal.", "Subsistema de Provisión de Personal.", "Subsistema de Desarrollo de Personal.", "Subsistema de Retención de Personal."], respuesta: 1 },
+            { pregunta: "¿Cuál de las siguientes es una característica del adiestramiento en el trabajo?", opciones: ["Se enfoca en el desarrollo de habilidades blandas.", "Es teórico y no práctico.", "Se realiza directamente en el entorno laboral.", "No requiere supervisión."], respuesta: 2 },
+            { pregunta: "¿Qué etapa del ciclo de vida de un documento implica la eliminación segura de documentos confidenciales?", opciones: ["Creación.", "Recepción.", "Uso.", "Disposición."], respuesta: 3 },
+            { pregunta: "¿Cuál de los siguientes es un archivo inactivo?", opciones: ["Contratos recientes.", "Informes financieros antiguos.", "Correspondencia activa.", "Documentos de recursos humanos actuales."], respuesta: 1 },
+            { pregunta: "¿Qué tipo de archivo tiene un valor histórico o patrimonial significativo?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos históricos.", "Archivos legales."], respuesta: 2 },
+            { pregunta: "¿Cuál es el plazo de conservación recomendado para documentos contables y financieros en Ecuador?", opciones: ["3 años.", "5 años.", "7 años.", "10 años."], respuesta: 2 },
+            { pregunta: "¿Qué función de la unidad de archivo central implica la organización y clasificación sistemática de documentos?", opciones: ["Almacenamiento seguro.", "Control de acceso.", "Organización y clasificación de documentos.", "Eliminación y disposición de documentos."], respuesta: 2 },
+            { pregunta: "¿Qué tipo de archivo se gestiona en diferentes ubicaciones dentro de una organización?", opciones: ["Archivos centralizados.", "Archivos descentralizados.", "Archivos históricos.", "Archivos legales."], respuesta: 1 },
+            { pregunta: "¿Qué tipo de violencia incluye la humillación y el aislamiento?", opciones: ["Violencia física.", "Violencia psicológica.", "Violencia sexual.", "Violencia económica."], respuesta: 1 },
+            { pregunta: "¿Qué tipo de violencia se refiere a la reproducción de mensajes que naturalizan la dominación y discriminación hacia las mujeres?", opciones: ["Violencia física.", "Violencia simbólica.", "Violencia política.", "Violencia gineco-obstétrica."], respuesta: 1 },
+            { pregunta: "¿Qué tipo de violencia incluye la esterilización forzada o el trato deshumanizado durante el parto?", opciones: ["Violencia física.", "Violencia psicológica.", "Violencia gineco-obstétrica.", "Violencia económica."], respuesta: 2 },
+            { pregunta: "¿Qué tipo de archivo contiene información sobre los empleados, como contratos laborales y evaluaciones de desempeño?", opciones: ["Archivos financieros.", "Archivos de recursos humanos.", "Archivos legales.", "Archivos históricos."], respuesta: 1 },
+            { pregunta: "¿Qué tipo de archivo debe conservarse indefinidamente debido a su valor histórico o patrimonial?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos históricos.", "Archivos legales."], respuesta: 2 },
+            { pregunta: "¿Qué tipo de archivo se refiere a documentos que ya no se utilizan con frecuencia pero que deben conservarse por razones legales?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos históricos.", "Archivos legales."], respuesta: 2 },
+            { pregunta: "¿Qué tipo de archivo contiene información sobre las finanzas de la organización, como estados de cuenta y facturas?", opciones: ["Archivos financieros.", "Archivos de recursos humanos.", "Archivos legales.", "Archivos históricos."], respuesta: 0 },
+            { pregunta: "¿Qué tipo de archivo se refiere a documentos que deben conservarse para cumplir con regulaciones legales?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos legales.", "Archivos históricos."], respuesta: 2 },
+            { pregunta: "¿Qué tipo de archivo se refiere a documentos que se utilizan con frecuencia en las operaciones diarias de la organización?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos históricos.", "Archivos legales."], respuesta: 0 },
+            { pregunta: "¿Qué tipo de archivo se refiere a documentos que deben conservarse por razones históricas o de referencia?", opciones: ["Archivos activos.", "Archivos inactivos.", "Archivos históricos.", "Archivos legales."], respuesta: 2 }
+        ];
+        
+        const contenedor = document.getElementById("preguntas-container");
+        
+        preguntas.forEach((item, index) => {
+            let div = document.createElement("div");
+            div.className = "question";
+            
+            let pregunta = document.createElement("p");
+            pregunta.textContent = `${index + 1}. ${item.pregunta}`;
+            div.appendChild(pregunta);
+            
+            item.opciones.forEach((opcion, i) => {
+                let label = document.createElement("label");
+                let input = document.createElement("input");
+                input.type = "radio";
+                input.name = `q${index}`;
+                input.value = i;
+                input.onclick = function() {
+                    let feedback = div.querySelector(".feedback");
+                    if (!feedback) {
+                        feedback = document.createElement("p");
+                        feedback.className = "feedback";
+                        div.appendChild(feedback);
+                    }
+                    feedback.textContent = i === item.respuesta ? "✔ Respuesta correcta" : "✘ Respuesta incorrecta";
+                    feedback.style.color = i === item.respuesta ? "green" : "red";
+                };
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(` ${opcion}`));
+                div.appendChild(label);
+                div.appendChild(document.createElement("br"));
+            });
+            
+            contenedor.appendChild(div);
+        });
+    </script>
+</body>
+</html>
